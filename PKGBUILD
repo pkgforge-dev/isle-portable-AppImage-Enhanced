@@ -7,7 +7,7 @@ arch=(x86_64 aarch64)
 url="https://github.com/isledecomp/isle-portable"
 license=('LGPL-3.0-or-later')
 depends=('iniparser' 'mesa' 'qt6-base' 'sdl3')
-makedepends=('cmake' 'git' 'python')
+makedepends=('cmake' 'git' 'python' 'curl' 'ca-certificates')
 provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
 source=(
@@ -42,7 +42,7 @@ build() {
         -DCMAKE_BUILD_TYPE=Release
         -DCMAKE_INSTALL_PREFIX=/usr
         -DCMAKE_INSTALL_LIBDIR=lib
-        -DDOWNLOAD_DEPENDENCIES=OFF
+        -DDOWNLOAD_DEPENDENCIES=ON
     )
     cmake -B build -S "${pkgname%-git}" "${cmake_options[@]}"
     cmake --build build
