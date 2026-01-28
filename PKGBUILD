@@ -41,7 +41,7 @@ build() {
     local cmake_options=(
         -DCMAKE_BUILD_TYPE=Release
         -DCMAKE_INSTALL_PREFIX=/usr
-        -DCMAKE_INSTALL_LIBDIR=lib
+        #-DCMAKE_INSTALL_LIBDIR=lib
         -DDOWNLOAD_DEPENDENCIES=ON
     )
     cmake -B build -S "${pkgname%-git}" "${cmake_options[@]}"
