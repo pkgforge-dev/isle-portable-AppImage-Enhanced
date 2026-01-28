@@ -15,7 +15,8 @@ export DEPLOY_VULKAN=1
 
 # Deploy dependencies
 quick-sharun /$HOME/.local/bin/isle /usr/bin/isle-config
-#/usr/lib/liblego1.so
+mv $HOME/.local/lib/liblego1.so ./AppDir/bin
+echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/bin' >> ./AppDir/.env
 
 # Additional changes can be done in between here
 
