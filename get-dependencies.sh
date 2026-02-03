@@ -10,7 +10,6 @@ pacman -Syu --noconfirm \
     cmake     \
     iniparser \
     libdecor  \
-    mesa      \
     python    \
     qt6-base  \
     sdl3
