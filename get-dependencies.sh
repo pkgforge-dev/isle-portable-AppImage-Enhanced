@@ -35,4 +35,4 @@ cmake .. -DCMAKE_BUILD_TYPE=Release \
          -DDOWNLOAD_DEPENDENCIES=ON
 make -j $(nproc)
 make install
-sed -i 's/^Exec=isle/Exec=isle-config/' "/usr/share/applications/isle-portable.desktop"
+sed -i 's/^Exec=isle/Exec=isle-config/' "/usr/share/applications/org.legoisland.Isle.desktop"
