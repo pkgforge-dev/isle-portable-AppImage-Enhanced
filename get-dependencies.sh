@@ -33,6 +33,6 @@ mkdir -p build && cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release \
          -DCMAKE_INSTALL_PREFIX=/usr \
          -DDOWNLOAD_DEPENDENCIES=ON
-make -j $(nproc)
+make -j$(nproc)
 make install
 sed -i 's/^Exec=isle/Exec=isle-config/' "/usr/share/applications/org.legoisland.Isle.desktop"
