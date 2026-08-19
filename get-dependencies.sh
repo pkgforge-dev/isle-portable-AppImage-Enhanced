@@ -17,11 +17,7 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
-# Comment this out if you need an AUR package
-#make-aur-package
-
-# If the application needs to be manually built that has to be done down here
-echo "Making nightly build of isle-portable..."
+echo "Building isle-portable..."
 echo "---------------------------------------------------------------"
 REPO="https://github.com/isledecomp/isle-portable"
 VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
