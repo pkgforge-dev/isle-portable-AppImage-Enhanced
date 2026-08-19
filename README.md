@@ -11,7 +11,7 @@
 </p>
 
 
-| Latest Nightly Release | Upstream URL |
+| Latest Stable Release | Upstream URL |
 | :---: | :---: |
 | [Click here](https://github.com/pkgforge-dev/isle-portable-AppImage-Enhanced/releases/latest) | [Click here](https://github.com/isledecomp/isle-portable) |
 
