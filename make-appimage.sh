@@ -17,7 +17,5 @@ quick-sharun /usr/bin/isle-config /usr/bin/isle
 mv /usr/lib/liblego1.so ./AppDir/bin
 echo 'SHARUN_WORKING_DIR=${SHARUN_DIR}/bin' >> ./AppDir/.env
 
-# Additional changes can be done in between here
-
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
