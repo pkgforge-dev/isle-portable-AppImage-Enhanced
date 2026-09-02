@@ -9,7 +9,6 @@ echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
     cmake     \
     iniparser \
-    python    \
     sdl3
 
 echo "Installing debloated packages..."
