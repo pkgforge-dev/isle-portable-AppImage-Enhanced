@@ -6,10 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm \
-    cmake     \
-    iniparser \
-    sdl3
+pacman -Syu --noconfirm cmake iniparser sdl3
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
@@ -22,11 +19,7 @@ VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
 git clone --recursive --depth 1 "$REPO" ./isle-portable
 echo "$VERSION" > ~/version
 
-cd ./isle-portable
-mkdir -p build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release \
-         -DCMAKE_INSTALL_PREFIX=/usr \
-         -DDOWNLOAD_DEPENDENCIES=ON
-make -j$(nproc)
-make install
+cmake -S ./isle-portable -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DDOWNLOAD_DEPENDENCIES=ON
+cmake --build build -j$(nproc)
+cmake --install build
 sed -i 's/^Exec=isle/Exec=isle-config/' "/usr/share/applications/org.legoisland.Isle.desktop"
